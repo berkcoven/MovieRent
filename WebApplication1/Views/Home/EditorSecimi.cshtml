@@ -1,0 +1,39 @@
+﻿@model List<MovieRent.Entities.Movies>
+@{
+    ViewBag.Title = "EditorSecimi";
+}
+
+<div id="main">
+    <div id="content">
+        <h2 style="color:orange">Editör Seçimi Filmler</h2>
+        <div class="box">
+            <div class="head col-lg-12">
+
+                <p class="text-right"><a href="#">See all</a></p>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="movie col-lg-2">
+                    <div class="movie-image"> <span class="play"><span class="name">@item.MovieName</span></span> <a href="#"><img src="@Url.Content(item.ImagePath)" alt="" /></a> </div>
+                    <div class="rating">
+
+                        <span class="ekle">
+                            @Html.ActionLink("Detail", "Detail", new { id = item.MovieID }, new { @class = "btn btn-block" })
+                        </span>
+                    </div>
+
+                </div>
+            }
+
+
+
+            <div class="cl">&nbsp;</div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+

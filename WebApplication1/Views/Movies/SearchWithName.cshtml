@@ -1,0 +1,46 @@
+﻿@model List<MovieRent.Entities.Movies>
+@{
+    ViewBag.Title = "SearchWithName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="main">
+    <div id="content">
+        @if (TempData["AramaHatasi"] !=null)
+        {
+            <h3 style="color:#ff6a00">@TempData["AramaHatasi"]</h3>
+        }
+            <div class="box">
+                <div class="head">
+
+                    
+                   
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="movie">
+                        <div class="movie-image"> <span class="play"><span class="name">@item.MovieName</span></span> <a href="#"><img src="@Url.Content(item.ImagePath)" alt="" /></a> </div>
+                        <div class="rating">
+
+                            <span class="ekle">
+                                @Html.ActionLink("Detail", "Detail","Home", new { id = item.MovieID }, new { @class = "btn btn-block" })
+                            </span>
+                        </div>
+
+                    </div>
+                }
+
+
+
+                <div class="cl">&nbsp;</div>
+            </div>
+       
+
+
+
+    </div>
+
+
+
+</div>

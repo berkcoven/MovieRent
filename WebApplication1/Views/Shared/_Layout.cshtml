@@ -1,0 +1,91 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/ie6.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script  src="~/Scripts/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-func.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  
+
+
+
+
+
+</head>
+<body>
+    <div id="header">
+        <h1 id="logo"><a href="#">MovieHunter</a></h1>
+        <div class="social">
+            <span>FOLLOW US ON:</span>
+            <ul>
+                <li><a class="twitter" href="#">twitter</a></li>
+                <li><a class="facebook" href="#">facebook</a></li>
+                <li><a class="vimeo" href="#">vimeo</a></li>
+                <li><a class="rss" href="#">rss</a></li>
+            </ul>
+        </div>
+        <div id="navigation">
+            <ul>
+                <li><a class="active" href="#">HOME</a></li>
+                <li><a href="/Home/UserList">LISTEM</a></li>
+                <li><a href="#">IN THEATERS</a></li>
+                <li><a href="#">COMING SOON</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">@Session["KAdi"]</a></li>
+            </ul>
+        </div>
+        <div id="sub-navigation">
+            <ul>
+                <li><a href="/Home/Index">SHOW ALL</a></li>
+
+                <li><a href="/Home/EditorSecimi">EDITOR SECIMI</a></li>
+                <li><a href="/Movies/Index">CATEGORY LIST</a></li>
+                <li><a href="#">MOST COMMENTED</a></li>
+            </ul>
+
+            <div id="search">
+                <form action="#" method="get" accept-charset="utf-8">
+                    <label for="search-field">SEARCH</label>
+                    <input type="text" name="search-field" placeholder="Enter search here" id="search-field" class="blink search-field">
+                    @Html.ActionLink("GO!", "SearchWithName", "Movies", null, new { @id = "Checkuser" })
+                </form>
+
+            </div>
+            <h2 style="color:red">@TempData["ListMinTen"]</h2>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script>
+
+        $('#Checkuser').click(function (e) {
+            console.log("asld");
+            e.preventDefault();
+            window.location.href = $(this).attr('href') + '?id=' + $('#search-field').val();
+        });
+    </script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>

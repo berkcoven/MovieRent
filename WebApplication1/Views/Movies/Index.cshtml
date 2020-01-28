@@ -1,0 +1,31 @@
+﻿@using WebApplication1.Models;
+@model CategoryFilms
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/css")
+
+<div id="main">
+    <div id="content">
+        @using (Html.BeginForm("Index", "Movies", FormMethod.Post))
+        {
+        <div class="box">
+            <div class="head">
+                @Html.DropDownListFor(x=>x.selectedCatId,new SelectList(Model.categories, "CategoryID", "CategoryName"), "Kategori seçiniz",
+          new { @class = "form-control", @onchange = "this.form.submit()" })
+
+
+
+            </div>
+
+            @Html.Partial("FilmLists", Model.movies);
+            <div class="cl">&nbsp;</div>
+
+        </div>
+            
+        }
+
+    </div>
+</div>

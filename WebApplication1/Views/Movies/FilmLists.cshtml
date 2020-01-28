@@ -1,0 +1,17 @@
+﻿@using WebApplication1.Models;
+@model List<MovieRent.Entities.Movies>
+
+
+@foreach (var item in Model)
+{
+    <div class="movie">
+        <div class="movie-image"> <span class="play"><span class="name">@item.MovieName</span></span> <a href="#"><img src="@Url.Content(item.ImagePath)" alt="" /></a> </div>
+        <div class="rating" style="margin-left:auto;">
+
+            <span class="ekle">
+                @Html.ActionLink("Detail", "Detail", "Home", new { id = item.MovieID }, new { @class = "btn btn-block" })
+            </span>
+        </div>
+
+    </div>
+}

@@ -1,0 +1,32 @@
+﻿@model MovieRent.Entities.Movies
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .FilmAdi{
+
+        color: white;
+        padding-left:50px;
+    }
+</style>
+<div class="box">
+    <div class="head">
+
+    </div>
+
+    <div class="movie">
+        <div class="movie-image"> <span class="play"><span class="name">@Model.MovieName</span></span> <a href="#"><img src="@Url.Content(Model.ImagePath)" alt="" /></a> </div>
+    </div>
+
+    <div>
+        <h2 class="FilmAdi">@Model.MovieName</h2>
+        <p class="FilmAdi">@Model.Description</p>
+        <p style="color:cornflowerblue">Kalan Stok : @Model.Stock</p>
+    </div>
+
+    @Html.ActionLink("Film Ekle", "FilmAdd", "Home", new { id = Model.MovieID }, null)
+    <div class="cl">&nbsp;</div>
+</div>
+
+

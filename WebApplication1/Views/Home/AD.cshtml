@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MovieRent.Entities.UserAppFilmList>
+@{
+    ViewBag.Title = "AD";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul id="sortable">
+    @foreach (var item in Model)
+    {
+
+        <li class="ui-state-default" id="a"><span class="ui-icon ui-icon-arrowthick-2-n-s">@item.ListID</span>@item.MovieName</li>
+    }
+    
+    
+</ul>
+<button onclick="Bas()" >Kaydet</button>
+
+
+<script>
+    function Bas() {
+
+
+        var MyList = new Array();
+
+
+
+        for (var i = 0; i < $("#sortable>li").length; i++) {
+
+            MyList[i] = $("#sortable>li>span")[i].innerText;
+            console.log(MyList[i]);
+
+        }
+        var obj = [1,2,3];
+        
+             $.ajax({
+                url: '@Url.Action("UserListReorder", "Home")',
+                type: 'POST',
+                 dataType: 'json',
+                 data: { a: MyList },
+                success: function (gelenveri) {
+ 
+                },
+                error: function (hata) {
+ 
+                }
+            });
+       
+
+    }
+</script>
+<script>
+    $(function () {
+        $("#sortable").sortable();
+        $("#sortable").disableSelection();
+    });
+</script>

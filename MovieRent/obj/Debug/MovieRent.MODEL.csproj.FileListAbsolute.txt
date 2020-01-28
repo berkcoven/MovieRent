@@ -1,0 +1,12 @@
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\bin\Debug\MovieRent.dll
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\bin\Debug\MovieRent.pdb
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\obj\Debug\MovieRent.MODEL.csproj.CoreCompileInputs.cache
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\obj\Debug\MovieRent.dll
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\obj\Debug\MovieRent.pdb
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\bin\Debug\MovieRent.dll.config
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\bin\Debug\EntityFramework.dll
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\bin\Debug\EntityFramework.xml
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\obj\Debug\MovieRent.MODEL.csprojAssemblyReference.cache
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent\obj\Debug\MovieRent.MODEL.csproj.CopyComplete
