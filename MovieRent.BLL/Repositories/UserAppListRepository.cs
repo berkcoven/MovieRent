@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace MovieRent.BLL.Repositories
 {
@@ -36,6 +37,7 @@ namespace MovieRent.BLL.Repositories
         {
             return db.Set<UserAppFilmList>().Where(x => x.Oncelik == id).FirstOrDefault();
         }
+     
         public void ListAddById(Movies movie,UserApp user)
         {
             int i = db.Set<UserAppFilmList>().Where(x => x.UserID == user.UserID&&x.isActive==true).Count();

@@ -30,42 +30,7 @@ namespace WebApplication1.Controllers
 
         
 
-        //public ActionResult AD()
-        //{
-            
-
-
-        //    UserApp user = users.SelectByID(3);
-        //    var result = listRepository.Where(x => x.UserID == user.UserID && x.isActive == true).ToList();
-        //    var result2 = moviesRepository.SelectAll();
-
-        //    foreach (var item in result2)
-        //    {
-        //        UserAppFilmList newobj = new UserAppFilmList();
-
-        //        foreach (var item2 in result)
-        //        {
-
-        //            if (item2.MovieID == item.MovieID)
-        //            {
-
-        //                newobj.MovieName = item.MovieName;
-        //                newobj.ListID = item2.ListID;
-        //                newobj.KiralaTarihi = item2.KiralaTarihi;
-        //                newobj.ListeTarihi = item2.ListeTarihi;
-        //                newobj.MovieID = item2.MovieID;
-        //                newobj.Oncelik = item2.Oncelik;
-        //                newobj.UserID = item2.UserID;
-        //                newobj.isActive = item2.isActive;
-        //                listRepository.Update(item2.ListID, newobj);
-
-        //            }
-        //        }
-        //    }
-        //    var result3 = listRepository.Where(x => x.UserID == user.UserID && x.isActive == true).ToList();
-        //    var result4 = result3.OrderBy(x => x.Oncelik).ToList();
-        //    return View(result4);
-        //}
+        
         
        
         public ActionResult Index()

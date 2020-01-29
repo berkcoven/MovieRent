@@ -1,0 +1,27 @@
+﻿@model  List<WebApplication1.Models.MostViewedModel>
+@{
+    ViewBag.Title = "EnCokKiralanan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Sayisi</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MovieId</td>
+                <td>@item.Count</td>
+                <td>@item.Movie.MovieName</td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
