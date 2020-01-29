@@ -135,6 +135,7 @@
     </Compile>
     <Compile Include="Models\CategoryFilms.cs" />
     <Compile Include="Models\Liste.cs" />
+    <Compile Include="Models\MostViewedModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -552,13 +553,14 @@
     <Content Include="Views\AppUser\LogIn.cshtml" />
     <Content Include="Views\AppUser\Register.cshtml" />
     <Content Include="Views\Home\UserList.cshtml" />
-    <Content Include="Views\Home\AD.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\FilmLists.cshtml" />
     <Content Include="Views\Movies\FilmLists.cshtml" />
     <Content Include="Views\Movies\SearchWithName.cshtml" />
+    <Content Include="Views\Movies\SiparisVer.cshtml" />
+    <Content Include="Views\Movies\EnCokKiralanan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

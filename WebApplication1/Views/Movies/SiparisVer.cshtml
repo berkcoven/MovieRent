@@ -1,0 +1,30 @@
+﻿@model List<MovieRent.Entities.UserAppFilmList>
+@{
+    ViewBag.Title = "SiparisVer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="color:orange">Siparişiniz bize ulaşmıştır. Istek listeniz aşağıdaki gibidir.</h3>
+<table class="table table-bordered table-dark" style="color:aliceblue">
+    <thead>
+        <tr>
+            <th scope="col">Priority No</th>
+            <th scope="col">Movie Name</th>
+            <th scope="col">List Date</th>
+            <th scope="col">Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Oncelik</td>
+                <td>@item.MovieName</td>
+                <td>@item.ListeTarihi.Value.ToShortDateString() </td>
+                <td>@item.KiralaTarihi.Value.ToShortDateString()</td>
+                
+            </tr>
+        }
+
+    </tbody>
+</table>
