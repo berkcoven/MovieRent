@@ -13,7 +13,7 @@ namespace MovieRent.DAL
     {
         public ProjectContext()
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            //this.Configuration.LazyLoadingEnabled = true;
             Database.Connection.ConnectionString = "server=MBTERYA017\\SQLSERVER;database=MovieDB;uid=sa;password=BkBk123!";
 
         }
@@ -26,6 +26,7 @@ namespace MovieRent.DAL
             modelBuilder.Configurations.Add(new PremiumMap());      
             modelBuilder.Configurations.Add(new UserAppMap());
             modelBuilder.Configurations.Add(new UserAppFilmListMap());
+            modelBuilder.Configurations.Add(new SuppliersMap());
             base.OnModelCreating(modelBuilder);
         }
 

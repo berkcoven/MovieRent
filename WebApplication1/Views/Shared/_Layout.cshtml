@@ -17,7 +17,16 @@
     <script type="text/javascript" src="~/Scripts/jquery-func.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
+    
+    <style>
+        #Checkuser{
+            color: red!important;
+            text-align:center;
+        }
+        .dropdown-menu {
+            text-align: center;
+        }
+    </style>
   
 
 
@@ -39,12 +48,23 @@
         </div>
         <div id="navigation">
             <ul>
+                <li><span class="glyphicon glyphicon-log-out" style="color:black!important" aria-hidden="true"></span></li>
                 <li><a class="active" href="#">HOME</a></li>
                 <li><a href="/Home/UserList">LISTEM</a></li>
                 <li><a href="#">IN THEATERS</a></li>
                 <li><a href="#">COMING SOON</a></li>
                 <li><a href="#">CONTACT</a></li>
-                <li><a href="#">@Session["KAdi"]</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @Session["KAdi"]
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 
+                        <span class="glyphicon glyphicon-log-out" style="color:black!important" aria-hidden="true"></span>
+                        @Html.ActionLink("Logout!", "Login", "AppUser", null, new { id = "Checkuser", @class = "test123" })
+                    </div>
+                </li>
+               
             </ul>
         </div>
         <div id="sub-navigation">
@@ -53,17 +73,17 @@
 
                 <li><a href="/Home/EditorSecimi">EDITOR SECIMI</a></li>
                 <li><a href="/Movies/Index">CATEGORY LIST</a></li>
-                <li><a href="#">MOST COMMENTED</a></li>
-                <li><a href="/Movies/EnCokKiralanan">MOST VİEWED</a></li>
+                <li><a href="/Movies/EnCokKiralanan">MOST LISTED FILMS</a></li>
             </ul>
 
             <div id="search">
                 <form action="#" method="get" accept-charset="utf-8">
                     <label for="search-field">SEARCH</label>
                     <input type="text" name="id" placeholder="Enter search here" id="search-field" class="blink search-field">
-                    @Html.ActionLink("GO!", "SearchWithName", "Movies", null, new { @id = "Checkuser" })
+                    @Html.ActionLink("GO!", "SearchWithName", "Movies", null, new { id = "Checkuser",@class="test123" })
+                    
                 </form>
-
+                
             </div>
             <h2 style="color:red">@TempData["ListMinTen"]</h2>
         </div>
@@ -76,12 +96,23 @@
 
     @*@Scripts.Render("~/bundles/jquery")*@
     <script>
-
+       
         $('#Checkuser').click(function (e) {
-            console.log("asld");
+            
             e.preventDefault();
-            window.location.href = $(this).attr('href') + '?id=' + $('#search-field').val();
+            window.location.href = '/Movies/SearchWithName/' + '?id=' + $('#search-field').val();
         });
+        $(document).keyup(function (event) {
+            if ($("#search-field").is(":focus") && event.key == "Enter") {
+                console.log("sa");
+                $('.test123').trigger("click");
+            }
+        });
+
+
+
+
+        
     </script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

@@ -9,6 +9,11 @@ namespace MovieRent.Entities
 {
     public class Movies : BaseEntity
     {
+        public Movies()
+        {
+            isBroken = false;
+        }
+
         [Key]
         public int MovieID { get; set; }
         public string MovieName { get; set; }
@@ -18,6 +23,9 @@ namespace MovieRent.Entities
         public int CategoryID { get; set; }
         public Nullable<int> ListID { get; set; }
         public Nullable<int> AdminID { get; set; }
+        public Nullable<bool> isBroken { get; set; }
+        public string BrokenDetails { get; set; }
+        
 
         public string Director { get; set; }
         public string Actors { get; set; }
@@ -30,14 +38,16 @@ namespace MovieRent.Entities
         public string ImagePath { get; set; }
         public string Description { get; set; }
         public Nullable<bool> IsActive { get; set; }
-       
-
+        
+        public Nullable<int> SupplierID { get; set; }
 
 
         public virtual ICollection<Categories> Categories { get; set; }
         public List<UserAppFilmList> UserList { get; set; }
         
-        
+        public Suppliers supplier { get; set; }
+
+
 
 
     }

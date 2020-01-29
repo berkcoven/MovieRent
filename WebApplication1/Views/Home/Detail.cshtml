@@ -9,6 +9,12 @@
         color: white;
         padding-left:50px;
     }
+    .btn-success{
+        width:127px!important;
+    }
+    .detay{
+        color:rgb(151, 151, 151);
+    }
 </style>
 <div class="box">
     <div class="head">
@@ -16,17 +22,36 @@
     </div>
 
     <div class="movie">
-        <div class="movie-image"> <span class="play"><span class="name">@Model.MovieName</span></span> <a href="#"><img src="@Url.Content(Model.ImagePath)" alt="" /></a> </div>
+        <div class="movie-image">
+            <span class="play">
+                <span class="name">@Model.MovieName</span>
+            </span>
+            <a href="#"><img src="@Url.Content(Model.ImagePath)" alt="" /></a>
+
+        </div>
+        <p style="color:cornflowerblue">Kalan Stok : @Model.Stock</p>
+
     </div>
 
     <div>
         <h2 class="FilmAdi">@Model.MovieName</h2>
-        <p class="FilmAdi">@Model.Description</p>
-        <p style="color:cornflowerblue">Kalan Stok : @Model.Stock</p>
-    </div>
+        <h4 class="FilmAdi">@Model.CrMovieName</h4>
+        <h4 class="detay">Director : @Model.Director</h4>
+        <h4 class="detay">Actors : @Model.Actors</h4>
 
-    @Html.ActionLink("Film Ekle", "FilmAdd", "Home", new { id = Model.MovieID }, null)
+        <p class="detay">Awards : @Model.Awards</p>
+        <p class="detay">Subtitles : @Model.Altyazi</p>
+        <p class="detay">Auido Properties : @Model.AudioProperty</p>
+
+    </div>
+    <div style="margin-left:5px">
+
+        <h6 class="FilmAdi" style="margin-left:5px;">@Model.Description</h6>
+    </div>
+    
+    @Html.ActionLink("Add to List", "FilmAdd", "Home", new { id = Model.MovieID }, new { @class = "btn btn-success" })
     <div class="cl">&nbsp;</div>
+
 </div>
 
 

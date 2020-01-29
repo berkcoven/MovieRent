@@ -9,11 +9,12 @@ namespace MovieRent.Entities
 {
     public class UserApp : BaseEntity
     {
+        
         public UserApp()
         {
             
             UyeOlmeTarihi = DateTime.Now;
-
+            NotDeliverTimes = 0;
         }
         [Key]
         public int UserID { get; set; }
@@ -36,6 +37,7 @@ namespace MovieRent.Entities
         [Required]
         public string TelNo { get; set; }
         public DateTime UyeOlmeTarihi { get; set; }
+        public int NotDeliverTimes { get; set; }
 
 
         public UserAppFilmList UserMovieList { get; set; }

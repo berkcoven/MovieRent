@@ -56,6 +56,7 @@
     <Compile Include="Options\CategoryMap.cs" />
     <Compile Include="Options\MoviesMap.cs" />
     <Compile Include="Options\PremiumMap.cs" />
+    <Compile Include="Options\SuppliersMap.cs" />
     <Compile Include="Options\UserAppFilmListMap.cs" />
     <Compile Include="Options\UserAppMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

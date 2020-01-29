@@ -130,10 +130,11 @@ h1#logo a {
 	background-position:-54px 0;
 }
 #navigation {
-	float:right;
-	clear:right;
-	padding-top:28px;
-	padding-bottom:47px;
+    float: right;
+    clear: right;
+    padding-top: 28px;
+    padding-bottom: 47px;
+    margin-right: 62px;
 }
 #navigation ul {
 	list-style:none;

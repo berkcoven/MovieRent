@@ -56,6 +56,7 @@
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Movies.cs" />
     <Compile Include="Entities\Premiums.cs" />
+    <Compile Include="Entities\Suppliers.cs" />
     <Compile Include="Entities\UserApp.cs" />
     <Compile Include="Entities\UserAppFilmList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -76,7 +76,7 @@ namespace WebApplication1.Controllers
                 TempData["AramaHatasi"] = "Aradığınız kriterlere uygun film bulunamadı.";
             }
             return View(result);
-        }
+        }//TODO: her ekraanadn enter...
 
         public ActionResult SiparisVer(string id)
         {
@@ -92,7 +92,7 @@ namespace WebApplication1.Controllers
         {
             List<UserAppFilmList> uafl = listRepository.SelectAll().Where(x=>x.isActive==true).ToList();
 
-            List<MostViewedModel> Kiralanan = uafl.GroupBy(x => x.MovieID).Select(y => new MostViewedModel() {MovieId=y.Key,Count = y.Count(),Movie=moviesRepository.SelectByID(y.Key) }).ToList();
+            List<MostViewedModel> Kiralanan = uafl.GroupBy(x => x.MovieID).Select(y => new MostViewedModel() {MovieId=y.Key,Count = y.Count(),Movie=moviesRepository.SelectByID(y.Key) }).OrderByDescending(x=>x.Count).Take(3).ToList();
 
             return View(Kiralanan);
         }

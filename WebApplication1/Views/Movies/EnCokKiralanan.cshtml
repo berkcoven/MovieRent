@@ -4,24 +4,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Sayisi</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.MovieId</td>
-                <td>@item.Count</td>
-                <td>@item.Movie.MovieName</td>
-            </tr>
+<div id="main">
+    <div id="content">
 
-        }
+        <div class="box">
+            <div class="head">
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="movie">
+                    <div class="movie-image"> <span class="play"><span class="name">@item.Movie.MovieName</span></span> <a href="#"><img src="@Url.Content(item.Movie.ImagePath)" alt="" /></a> </div>
+                    <div class="rating" style="margin-left:auto;">
 
-    </tbody>
-</table>
+                        <span class="ekle">
+                            @Html.ActionLink("Detail", "Detail", "Home", new { id = item.Movie.MovieID }, new { @class = "btn btn-block" })
+                            
+                        </span>
+                        <h4 style="color:whitesmoke">@item.Count Times Listed </h4>
+                    </div>
+
+                </div>
+            }
+
+            <div class="cl">&nbsp;</div>
+        </div>
+       
+
+    </div>
+</div>

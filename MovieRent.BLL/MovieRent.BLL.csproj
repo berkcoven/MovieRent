@@ -58,6 +58,7 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\MoviesRepository.cs" />
     <Compile Include="Repositories\PremiumRepository.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
     <Compile Include="Repositories\UserAppListRepository.cs" />
     <Compile Include="Repositories\UserAppRepository.cs" />
     <Compile Include="Singleton\DbTool.cs" />
