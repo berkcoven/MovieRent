@@ -96,7 +96,12 @@ namespace WebApplication1.Controllers
 
             return View(Kiralanan);
         }
+        public ActionResult NewestMovies()
+        {
+           List<Movies> movies= moviesRepository.SelectAll().OrderByDescending(x => x.RelaiseDate).ToList();
 
+            return View(movies);
+        }
         public bool UserGiris()
         {
             UserApp user = (UserApp)Session["login"];

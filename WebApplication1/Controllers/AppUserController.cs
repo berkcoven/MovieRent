@@ -76,6 +76,7 @@ namespace WebApplication1.Controllers
                 Session["login"] = user;
                 Session["KAdi"] = user.UserName + " " + user.UserLastName;
                 FormsAuthentication.SetAuthCookie(user.UserName, true);
+
                 if (ualp.SelectAll().Where(x => x.UserID == user.UserID&&x.isActive==true).Count() < 5)
                 {
                     TempData["ListMinTen"] = "Lütfen listenize en az 10 adet film ekleyiniz";
