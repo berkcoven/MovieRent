@@ -59,9 +59,10 @@
                         @Session["KAdi"]
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 
-                        <span class="glyphicon glyphicon-log-out" style="color:black!important" aria-hidden="true"></span>
-                        @Html.ActionLink("Logout!", "Login", "AppUser", null)
+
+                        <span class="glyphicon glyphicon-log-out" style="color:black!important"></span>
+                       
+                        @Html.ActionLink("LogOut", "LogOut", "AppUser")
                     </div>
                 </li>
                

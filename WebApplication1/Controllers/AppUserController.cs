@@ -1,4 +1,5 @@
 ﻿using MovieRent.BLL.Repositories;
+using MovieRent.COMMON.Helpers;
 using MovieRent.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace WebApplication1.Controllers
         UserAppRepository userAppRepository = new UserAppRepository();
         PremiumRepository premiumRepository = new PremiumRepository();
         UserAppListRepository ualp = new UserAppListRepository();
+        AdminRepository ap = new AdminRepository();
         // GET: AppUser
         public ActionResult Index()
         {
@@ -21,8 +23,7 @@ namespace WebApplication1.Controllers
         }
 
         public ActionResult Register() {
-
-
+           
             return View();
         }
 
@@ -36,7 +37,12 @@ namespace WebApplication1.Controllers
 //TODO:Sifre için farklı try catch 3 haneli sifre giriniz.
                 user.KKSifre = Int32.Parse(formCollection.Get("KKSifre"));
                 OdemeAl(user.KKNo, user.KKSonKullanma, user.KKSifre, user.Userpremium);
+                string body = "MovieRent film kiralama sitesine hoşgeldiniz sayın"+user.UserName+ ". Activasyon İçin Linke Tıklayınız http://localhost:53399/AppUser/UserActivation/?id="+user.UserID;
+                Mailer.Send(user.Email, body, "MovieRent'e Hoşgeldiniz!");
+
+
                 return RedirectToAction("LogIn", "AppUser");
+
 
             }
             catch (Exception ex)
@@ -45,11 +51,16 @@ namespace WebApplication1.Controllers
 
                 return RedirectToAction("Register", "AppUser");
             }
+          
+        }
 
-            
-            
+        public ActionResult UserActivation(int id)
+        {
+            UserApp user = userAppRepository.SelectByID(id);
+            user.isActive = true;
+            userAppRepository.Update(id, user);
 
-            
+            return RedirectToAction("LogIn", "AppUser");
         }
         public void OdemeAl(string KKno,string KKsk,int KKSifre,Premiums premium)
         {
@@ -58,7 +69,15 @@ namespace WebApplication1.Controllers
 
         public ActionResult LogIn()
         {
-            return View();
+            if (Session["login"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else{
+
+                return View();
+            }
+          
         }
         [HttpPost]
         public ActionResult LogIn(UserApp model)
@@ -72,31 +91,63 @@ namespace WebApplication1.Controllers
             }
             else 
             {
-                //Session
-                Session["login"] = user;
-                Session["KAdi"] = user.UserName + " " + user.UserLastName;
-                FormsAuthentication.SetAuthCookie(user.UserName, true);
-
-                if (ualp.SelectAll().Where(x => x.UserID == user.UserID&&x.isActive==true).Count() < 5)
-                {
-                    TempData["ListMinTen"] = "Lütfen listenize en az 10 adet film ekleyiniz";
+                if (user.isActive == false) { TempData["HesapActive"] = "Hesabınızı mailinize gelen linkten aktif ediniz";
+                    return RedirectToAction("LogIn", "AppUser");
                 }
-                return RedirectToAction("Index", "Home");
+                else
+                {
+
+
+
+                    //Session
+                    Session["login"] = user;
+                    Session["KAdi"] = user.UserName + " " + user.UserLastName;
+                    FormsAuthentication.SetAuthCookie(user.UserName, true);
+
+                    if (ualp.SelectAll().Where(x => x.UserID == user.UserID && x.isActive == true).Count() < 5)
+                    {
+                        TempData["ListMinTen"] = "Lütfen listenize en az 10 adet film ekleyiniz";
+                    }
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
           
 
         }
 
+        public ActionResult LogOut()
+        {
+           
+                FormsAuthentication.SignOut();
+                Session.Abandon(); // it will clear the session at the end of request
+                return RedirectToAction("LogIn", "AppUser");
+            
+        }
+
         public void OdemeAlAylik(UserApp user)
         {
-            DateTime dt = user.UyeOlmeTarihi;
-            TimeSpan ts = DateTime.Now.Subtract(dt);
-            if (ts.Days >= 30)
+            try
             {
-                OdemeAl(user.KKNo, user.KKSonKullanma, user.KKSifre, user.Userpremium);
+                DateTime dt = user.UyeOlmeTarihi;
+                TimeSpan ts = DateTime.Now.Subtract(dt);
+                if (ts.Days >= 30)
+                {
+                    OdemeAl(user.KKNo, user.KKSonKullanma, user.KKSifre, user.Userpremium);
+                }
+
             }
-            //Ödeme alma işlemi
+            catch (Exception ex)
+            {
+
+                string body = "Kredi kartınızdan üyelik ücreti çekilemedi nedeni: "+ex.Message;
+                Admin admin = ap.SelectByID(2);
+                
+                Mailer.Send(user.Email, body, "Üyelik Ücreti Çekim Hatası");
+                Mailer.Send(admin.AdminEmail, body, "Üyelik Ücreti Çekim Hatası");
+                
+            }
+           
         }
 
     }

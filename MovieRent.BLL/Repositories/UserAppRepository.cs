@@ -11,7 +11,22 @@ namespace MovieRent.BLL.Repositories
 {
     public class UserAppRepository:BaseRepository<UserApp>
     {
-       
+        private ProjectContext db;
+        public UserAppRepository()
+        {
+            db = DbTool.DbInstance;
+        }
 
+        public void UserActivate(int id)
+        {
+            UserApp user = SelectByID(id);
+            user.isActive = true;
+
+            db.SaveChanges();
+        }
+
+
+        
+            
     }
 }

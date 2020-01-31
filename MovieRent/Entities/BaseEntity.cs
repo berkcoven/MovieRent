@@ -8,5 +8,6 @@ namespace MovieRent.Entities
 {
    public abstract class BaseEntity
     {
+
     }
 }

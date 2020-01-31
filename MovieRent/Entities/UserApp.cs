@@ -15,6 +15,7 @@ namespace MovieRent.Entities
             
             UyeOlmeTarihi = DateTime.Now;
             NotDeliverTimes = 0;
+            isActive = false;
         }
         [Key]
         public int UserID { get; set; }
@@ -38,6 +39,7 @@ namespace MovieRent.Entities
         public string TelNo { get; set; }
         public DateTime UyeOlmeTarihi { get; set; }
         public int NotDeliverTimes { get; set; }
+        public bool isActive { get; set; }
 
 
         public UserAppFilmList UserMovieList { get; set; }

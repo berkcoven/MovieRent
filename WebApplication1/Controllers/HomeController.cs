@@ -28,11 +28,7 @@ namespace WebApplication1.Controllers
             moviesRepository = new MoviesRepository();
         }
 
-        
-
-        
-        
-       
+      
         public ActionResult Index()
         {
 

@@ -26,6 +26,21 @@ namespace MovieRent.BLL.Repositories
             }
            
         }
+        public Movies SelectMovieByName(string name)
+        {
+            return SelectAll().Where(x => x.MovieName == name).FirstOrDefault();
+        }
+
+        public void AddtoEditorList(Movies mv)
+        {
+            mv.AdminID = 1;
+            db.SaveChanges();
+        }
+        public void RemoveFromEditorList(Movies mv)
+        {
+            mv.AdminID = null;
+            db.SaveChanges();
+        }
 
 
 

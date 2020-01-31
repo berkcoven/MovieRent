@@ -49,9 +49,17 @@ namespace MovieRent.BLL.Repositories
             userlist.MovieName = movie.MovieName;
             userlist.UserID = user.UserID;
             userlist.Oncelik =(short) (i + 1);
+            
 
             Add(userlist);
 
+        }
+
+        public List<UserAppFilmList> NextDayAlgo(List<UserAppFilmList> uaps)
+        {
+
+
+            return uaps;
         }
     }
 }

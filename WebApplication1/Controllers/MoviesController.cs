@@ -102,6 +102,12 @@ namespace WebApplication1.Controllers
 
             return View(movies);
         }
+
+        public ActionResult AwardedMovies()
+        {
+            List<Movies> movies = moviesRepository.SelectAll().Where(x => x.Awards != null).ToList();
+            return View(movies);
+        }
         public bool UserGiris()
         {
             UserApp user = (UserApp)Session["login"];

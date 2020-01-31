@@ -12,6 +12,8 @@ namespace MovieRent.Entities
         [Key]
         public int AdminID { get; set; }
         public string AdminName { get; set; }
+        public string AdminSifre { get; set; }
+        public string AdminEmail { get; set; }
         public List<Movies> EditorSecim { get; set; }
     }
 }
