@@ -55,11 +55,60 @@ namespace MovieRent.BLL.Repositories
 
         }
 
-        public List<UserAppFilmList> NextDayAlgo(List<UserAppFilmList> uaps)
+        public List<UserAppFilmList> NextDayAlgo(List<UserAppFilmList> uaps,List<Movies> movies)
         {
+            DateTime dt = DateTime.Now;
+            List<UserAppFilmList> shortstock = new List<UserAppFilmList>();
+            List<UserAppFilmList> gonderilecek = new List<UserAppFilmList>();
+           
+            //Stokta istenilen kadar ürün var mı ..
+            foreach (var item in uaps)
+            {
+                Movies a = movies.Where(x => x.MovieID == item.MovieID).FirstOrDefault();
+                if (uaps.Where(x => x.MovieID == item.MovieID).Count() > a.Stock)
+                {
+                    shortstock.Add(item);
 
+                }
+                else
+                {
+                    gonderilecek.Add(item);
+                }
 
-            return uaps;
+            }
+            //puan hesaplama
+            List<UserAppFilmList> shortstockGonderilecek = new List<UserAppFilmList>();
+            foreach (var item in shortstock)
+            {
+                DateTime listDate = item.ListeTarihi.Value;
+                TimeSpan span = dt - listDate;
+                double fark = span.TotalDays;
+                double gunPuan = fark / 3;
+                item.point = (double)(11- item.Oncelik);
+                item.point += gunPuan;
+                db.SaveChanges();
+                
+            }
+            //puanı yüksek olanı üste alsın
+            shortstockGonderilecek = shortstock.OrderByDescending(x => x.point).ToList();
+            //movieID si x olan bir üründen stok sayısı kadar ürünü listeye eklesin
+            //take<> ile en üstte kalanları yani puanı yüksek olanları alsın.
+            for (int i = 0; i < shortstockGonderilecek.Count; i++)
+            {
+                Movies a = movies.Where(x => x.MovieID == shortstockGonderilecek[i].MovieID).FirstOrDefault();
+                List<UserAppFilmList> gL = shortstockGonderilecek.Where(x => x.MovieID == shortstockGonderilecek[i].MovieID).Take((int)a.Stock).ToList();
+                shortstockGonderilecek.RemoveAll(x => x.MovieID == shortstockGonderilecek[i].MovieID);
+                foreach (var item2 in gL)
+                {
+                    gonderilecek.Add(item2);
+                }
+
+            }
+
+        
+
+            return gonderilecek;
+
         }
     }
 }

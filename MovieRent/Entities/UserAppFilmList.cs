@@ -12,7 +12,8 @@ namespace MovieRent.Entities
         public UserAppFilmList()
         {
             isActive = true;
-            point =(double) Oncelik;
+            isSent = false;
+            
         }
       
         [Key]
@@ -27,7 +28,9 @@ namespace MovieRent.Entities
         public Nullable<DateTime> ListeTarihi { get; set; }
         public Nullable<short> Oncelik { get; set; }
         public double point { get; set; }
-        
+        public bool isSent { get; set; }
+        public string CarrierName { get; set; }
+
         public List<UserApp> userApp { get; set; }
         public List<Movies> MovieList { get; set; }
     }

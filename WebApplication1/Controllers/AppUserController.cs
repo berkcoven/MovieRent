@@ -69,7 +69,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult LogIn()
         {
-            if (Session["login"] == null)
+            if (Session["login"] != null)
             {
                 return RedirectToAction("Index", "Home");
             }

@@ -56,51 +56,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EditorListEdit.cs">
+    <Compile Include="Forms\AddFilm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditorListEdit.Designer.cs">
+    <Compile Include="Forms\AddFilm.Designer.cs">
+      <DependentUpon>AddFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Barcoder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Barcoder.Designer.cs">
+      <DependentUpon>Barcoder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditorListEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditorListEdit.Designer.cs">
       <DependentUpon>EditorListEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Homepage.cs">
+    <Compile Include="Forms\Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Homepage.Designer.cs">
+    <Compile Include="Forms\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.cs">
+    <Compile Include="Forms\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
+    <Compile Include="Forms\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="NextDayAlgorithm.cs">
+    <Compile Include="Forms\NextDayAlgorithm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NextDayAlgorithm.Designer.cs">
+    <Compile Include="Forms\NextDayAlgorithm.Designer.cs">
       <DependentUpon>NextDayAlgorithm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NextDaysRents.cs">
+    <Compile Include="Forms\NextDaysRents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NextDaysRents.Designer.cs">
+    <Compile Include="Forms\NextDaysRents.Designer.cs">
       <DependentUpon>NextDaysRents.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EditorListEdit.resx">
+    <Compile Include="Forms\Tagger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tagger.Designer.cs">
+      <DependentUpon>Tagger.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\AddFilm.resx">
+      <DependentUpon>AddFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Barcoder.resx">
+      <DependentUpon>Barcoder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditorListEdit.resx">
       <DependentUpon>EditorListEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Homepage.resx">
+    <EmbeddedResource Include="Forms\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn.resx">
+    <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NextDayAlgorithm.resx">
+    <EmbeddedResource Include="Forms\NextDayAlgorithm.resx">
       <DependentUpon>NextDayAlgorithm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NextDaysRents.resx">
+    <EmbeddedResource Include="Forms\NextDaysRents.resx">
       <DependentUpon>NextDaysRents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -112,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Tagger.resx">
+      <DependentUpon>Tagger.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
