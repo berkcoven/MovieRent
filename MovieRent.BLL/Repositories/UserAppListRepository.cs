@@ -89,6 +89,17 @@ namespace MovieRent.BLL.Repositories
                 db.SaveChanges();
                 
             }
+            foreach (var item in gonderilecek)
+            {
+                DateTime listDate = item.ListeTarihi.Value;
+                TimeSpan span = dt - listDate;
+                double fark = span.TotalDays;
+                double gunPuan = fark / 3;
+                item.point = (double)(11- item.Oncelik);
+                item.point += gunPuan;
+                db.SaveChanges();
+                
+            }
             //puanı yüksek olanı üste alsın
             shortstockGonderilecek = shortstock.OrderByDescending(x => x.point).ToList();
             //movieID si x olan bir üründen stok sayısı kadar ürünü listeye eklesin
@@ -104,10 +115,30 @@ namespace MovieRent.BLL.Repositories
                 }
 
             }
+            UserAppRepository ua = new UserAppRepository();
+            List<UserAppFilmList> gonderSayi = new List<UserAppFilmList>();
+            List<UserAppFilmList> gonderFinal = new List<UserAppFilmList>();
+            foreach (var item in gonderilecek)
+            {
+                gonderSayi.Add(item);
+            }
+            gonderSayi = gonderSayi.OrderByDescending(x => x.point).ToList();
 
-        
+            foreach (var item in gonderSayi)
+            {
+                UserApp us = ua.SelectAll().Where(x => x.UserID == item.UserID).FirstOrDefault();
+                if (ua.UserFilmTimes(us))
+                {
+                   
+                    item.isSent = true;
+                    Update(item.ListID, item);
+                    
+                    gonderFinal.Add(item);
+                }
+            }
 
-            return gonderilecek;
+
+            return gonderFinal;
 
         }
     }

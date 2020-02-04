@@ -24,6 +24,23 @@ namespace MovieRent.BLL.Repositories
 
             db.SaveChanges();
         }
+        public bool UserFilmTimes(UserApp user)
+        {
+            PremiumRepository pr = new PremiumRepository();
+            UserAppListRepository ualp = new UserAppListRepository();
+            var prem = pr.SelectAll().Where(x => x.PremiumID == user.Userpremium.PremiumID).FirstOrDefault();
+            int userfilm = ualp.SelectAll().Where(x => x.UserID == user.UserID&&x.isSent==true).Count();
+            if (userfilm < prem.RentTimes)
+            {
+                
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
 
 
         

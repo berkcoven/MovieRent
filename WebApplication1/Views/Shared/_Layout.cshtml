@@ -51,9 +51,7 @@
                 <li><span class="glyphicon glyphicon-log-out" style="color:black!important" aria-hidden="true"></span></li>
                 <li><a class="active" href="#">HOME</a></li>
                 <li><a href="/Home/UserList">LISTEM</a></li>
-                <li><a href="#">IN THEATERS</a></li>
-                <li><a href="#">COMING SOON</a></li>
-                <li><a href="#">CONTACT</a></li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @Session["KAdi"]
@@ -62,10 +60,11 @@
 
                         <span class="glyphicon glyphicon-log-out" style="color:black!important"></span>
                        
-                        @Html.ActionLink("LogOut", "LogOut", "AppUser")
+                        @Html.ActionLink("LogOut", "LogOut", "AppUser", null, new { @style="color:black!important;"})
                     </div>
                 </li>
-               
+
+
             </ul>
         </div>
         <div id="sub-navigation">
@@ -75,6 +74,8 @@
                 <li><a href="/Home/EditorSecimi">EDITOR SECIMI</a></li>
                 <li><a href="/Movies/Index">CATEGORY LIST</a></li>
                 <li><a href="/Movies/EnCokKiralanan">MOST LISTED FILMS</a></li>
+                <li><a href="/Movies/NewestMovies">NEWEST FILMS</a></li>
+                <li><a href="/Movies/AwardedMovies">AWARDED FILMS</a></li>
             </ul>
 
             <div id="search">

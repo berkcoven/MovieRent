@@ -32,7 +32,7 @@ namespace WebApplication1.Controllers
             try
             {
 
-                user.Userpremium = premiumRepository.SelectByID(Int32.Parse(formCollection.Get("Userpremium_PremiumID")));
+                user.Userpremium = premiumRepository.SelectByID(Int32.Parse(formCollection.Get("PremiumID")));
                 userAppRepository.Add(user);
 //TODO:Sifre için farklı try catch 3 haneli sifre giriniz.
                 user.KKSifre = Int32.Parse(formCollection.Get("KKSifre"));
@@ -104,7 +104,7 @@ namespace WebApplication1.Controllers
                     Session["KAdi"] = user.UserName + " " + user.UserLastName;
                     FormsAuthentication.SetAuthCookie(user.UserName, true);
 
-                    if (ualp.SelectAll().Where(x => x.UserID == user.UserID && x.isActive == true).Count() < 5)
+                    if (ualp.SelectAll().Where(x => x.UserID == user.UserID && x.isActive == true).Count() < 10)
                     {
                         TempData["ListMinTen"] = "Lütfen listenize en az 10 adet film ekleyiniz";
                     }

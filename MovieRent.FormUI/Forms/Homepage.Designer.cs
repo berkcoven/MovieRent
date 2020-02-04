@@ -38,6 +38,8 @@
             this.addFilmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barkodCreaterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tagCreaterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.premiumReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@
             this.homepageToolStripMenuItem,
             this.editorListEditToolStripMenuItem,
             this.nextDayOrderToolStripMenuItem,
-            this.warehouseProcessToolStripMenuItem});
+            this.warehouseProcessToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1023, 24);
@@ -103,23 +106,38 @@
             // addFilmToolStripMenuItem
             // 
             this.addFilmToolStripMenuItem.Name = "addFilmToolStripMenuItem";
-            this.addFilmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addFilmToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.addFilmToolStripMenuItem.Text = "Add Film";
             this.addFilmToolStripMenuItem.Click += new System.EventHandler(this.addFilmToolStripMenuItem_Click);
             // 
             // barkodCreaterToolStripMenuItem
             // 
             this.barkodCreaterToolStripMenuItem.Name = "barkodCreaterToolStripMenuItem";
-            this.barkodCreaterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.barkodCreaterToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.barkodCreaterToolStripMenuItem.Text = "Barcode Creater";
             this.barkodCreaterToolStripMenuItem.Click += new System.EventHandler(this.barkodCreaterToolStripMenuItem_Click);
             // 
             // tagCreaterToolStripMenuItem
             // 
             this.tagCreaterToolStripMenuItem.Name = "tagCreaterToolStripMenuItem";
-            this.tagCreaterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tagCreaterToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.tagCreaterToolStripMenuItem.Text = "Tag Creater";
             this.tagCreaterToolStripMenuItem.Click += new System.EventHandler(this.tagCreaterToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.premiumReportToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // premiumReportToolStripMenuItem
+            // 
+            this.premiumReportToolStripMenuItem.Name = "premiumReportToolStripMenuItem";
+            this.premiumReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.premiumReportToolStripMenuItem.Text = "Premium Report";
+            this.premiumReportToolStripMenuItem.Click += new System.EventHandler(this.premiumReportToolStripMenuItem_Click);
             // 
             // Homepage
             // 
@@ -151,5 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem addFilmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem barkodCreaterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tagCreaterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem premiumReportToolStripMenuItem;
     }
 }

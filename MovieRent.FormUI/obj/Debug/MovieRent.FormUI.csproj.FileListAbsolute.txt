@@ -35,3 +35,5 @@ C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.
 C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.AddFilm.resources
 C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Barcoder.resources
 C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Tagger.resources
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.FilmReports.resources
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.ReportPage.resources

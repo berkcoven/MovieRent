@@ -92,7 +92,7 @@ namespace WebApplication1.Controllers
         {
             List<UserAppFilmList> uafl = listRepository.SelectAll().Where(x=>x.isActive==true).ToList();
 
-            List<MostViewedModel> Kiralanan = uafl.GroupBy(x => x.MovieID).Select(y => new MostViewedModel() {MovieId=y.Key,Count = y.Count(),Movie=moviesRepository.SelectByID(y.Key) }).OrderByDescending(x=>x.Count).Take(3).ToList();
+            List<MostViewedModel> Kiralanan = uafl.GroupBy(x => x.MovieID).Select(y => new MostViewedModel() {MovieId=y.Key,Count = y.Count(),Movie=moviesRepository.SelectByID(y.Key) }).OrderByDescending(x=>x.Count).Take(5).ToList();
 
             return View(Kiralanan);
         }

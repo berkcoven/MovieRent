@@ -115,7 +115,7 @@ namespace WebApplication1.Controllers
                         }
                     }
                 }
-                var result3 = listRepository.Where(x => x.UserID == user.UserID && x.isActive == true).ToList();
+                var result3 = listRepository.Where(x => x.UserID == user.UserID && x.isActive == true&&x.isSent==false).ToList();
                 var result4 = result3.OrderBy(x => x.Oncelik).ToList();
                 return View(result4);
             }

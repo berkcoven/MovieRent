@@ -74,6 +74,12 @@
     <Compile Include="Forms\EditorListEdit.Designer.cs">
       <DependentUpon>EditorListEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FilmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilmReports.Designer.cs">
+      <DependentUpon>FilmReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     <Compile Include="Forms\NextDaysRents.Designer.cs">
       <DependentUpon>NextDaysRents.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportPage.Designer.cs">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Tagger.cs">
@@ -115,6 +127,9 @@
     <EmbeddedResource Include="Forms\EditorListEdit.resx">
       <DependentUpon>EditorListEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilmReports.resx">
+      <DependentUpon>FilmReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NextDaysRents.resx">
       <DependentUpon>NextDaysRents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportPage.resx">
+      <DependentUpon>ReportPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

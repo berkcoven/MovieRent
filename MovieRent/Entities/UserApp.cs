@@ -40,6 +40,7 @@ namespace MovieRent.Entities
         public DateTime UyeOlmeTarihi { get; set; }
         public int NotDeliverTimes { get; set; }
         public bool isActive { get; set; }
+        public int PremiumID { get; set; }
 
 
         public UserAppFilmList UserMovieList { get; set; }

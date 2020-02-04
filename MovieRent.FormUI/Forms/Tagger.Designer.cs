@@ -38,6 +38,11 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserAdress = new System.Windows.Forms.Label();
             this.lblUserError = new System.Windows.Forms.Label();
+            this.txtCarrier = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCarrier = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +59,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(16, 44);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 21);
+            this.comboBox1.Size = new System.Drawing.Size(105, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -131,14 +136,63 @@
             this.lblUserError.TabIndex = 2;
             this.lblUserError.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // txtCarrier
+            // 
+            this.txtCarrier.Location = new System.Drawing.Point(429, 10);
+            this.txtCarrier.Name = "txtCarrier";
+            this.txtCarrier.Size = new System.Drawing.Size(100, 20);
+            this.txtCarrier.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(311, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Enter Carrier Name :";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(314, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(215, 39);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Save Carrier";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 229);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Carrier\'s Name :";
+            // 
+            // lblCarrier
+            // 
+            this.lblCarrier.AutoSize = true;
+            this.lblCarrier.Location = new System.Drawing.Point(172, 229);
+            this.lblCarrier.Name = "lblCarrier";
+            this.lblCarrier.Size = new System.Drawing.Size(0, 13);
+            this.lblCarrier.TabIndex = 2;
+            this.lblCarrier.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Tagger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 453);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtCarrier);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblCarrier);
             this.Controls.Add(this.lblUserError);
             this.Controls.Add(this.lblUserAdress);
             this.Controls.Add(this.lblUserName);
@@ -166,5 +220,10 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblUserAdress;
         private System.Windows.Forms.Label lblUserError;
+        private System.Windows.Forms.TextBox txtCarrier;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCarrier;
     }
 }

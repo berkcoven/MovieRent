@@ -13,6 +13,7 @@ namespace MovieRent.Entities
         public int PremiumID { get; set; }
         public string PremiumName { get; set; }
         public decimal Price { get; set; }
+        public int RentTimes { get; set; }
 
     }
 }

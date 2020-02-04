@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieRent.FormUI.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -87,6 +88,15 @@ namespace MovieRent.FormUI
             Tagger tagger = new Tagger();
             tagger.MdiParent = this;
             tagger.Show();
+        }
+
+        private void premiumReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKapa();
+            ReportPage report = new ReportPage();
+            report.MdiParent = this;
+            report.Show();
+
         }
     }
 }
