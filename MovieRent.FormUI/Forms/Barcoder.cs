@@ -33,8 +33,9 @@ namespace MovieRent.FormUI
         private void button1_Click(object sender, EventArgs e)
         {
             Movies movie =  mr.SelectMovieByName(comboBox1.SelectedItem.ToString());
-            string barkod = movie.MovieID + "00" + movie.CategoryID;
-            movie.Barkodno = Int32.Parse(barkod);
+            string barkod = movie.MovieID + "0" + movie.CategoryID+"0"+movie.Stock;
+            string value = Int32.Parse(barkod).ToString("D8");
+            movie.Barkodno = Int32.Parse(value);
             
             mr.Update(movie.MovieID, movie);
             lblBarcode.Text = movie.Barkodno.ToString();

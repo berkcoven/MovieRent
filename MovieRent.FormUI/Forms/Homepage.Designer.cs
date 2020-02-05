@@ -40,6 +40,12 @@
             this.tagCreaterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.premiumReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.movieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportBrokenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +56,8 @@
             this.editorListEditToolStripMenuItem,
             this.nextDayOrderToolStripMenuItem,
             this.warehouseProcessToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.movieToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1023, 24);
@@ -62,6 +69,7 @@
             this.homepageToolStripMenuItem.Name = "homepageToolStripMenuItem";
             this.homepageToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.homepageToolStripMenuItem.Text = "Homepage";
+            this.homepageToolStripMenuItem.Click += new System.EventHandler(this.homepageToolStripMenuItem_Click);
             // 
             // editorListEditToolStripMenuItem
             // 
@@ -127,7 +135,10 @@
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.premiumReportToolStripMenuItem});
+            this.premiumReportToolStripMenuItem,
+            this.categoryReportToolStripMenuItem,
+            this.dateReportToolStripMenuItem,
+            this.supplierReportToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -135,9 +146,53 @@
             // premiumReportToolStripMenuItem
             // 
             this.premiumReportToolStripMenuItem.Name = "premiumReportToolStripMenuItem";
-            this.premiumReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.premiumReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.premiumReportToolStripMenuItem.Text = "Premium Report";
             this.premiumReportToolStripMenuItem.Click += new System.EventHandler(this.premiumReportToolStripMenuItem_Click);
+            // 
+            // categoryReportToolStripMenuItem
+            // 
+            this.categoryReportToolStripMenuItem.Name = "categoryReportToolStripMenuItem";
+            this.categoryReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.categoryReportToolStripMenuItem.Text = "Category Report";
+            this.categoryReportToolStripMenuItem.Click += new System.EventHandler(this.categoryReportToolStripMenuItem_Click);
+            // 
+            // dateReportToolStripMenuItem
+            // 
+            this.dateReportToolStripMenuItem.Name = "dateReportToolStripMenuItem";
+            this.dateReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.dateReportToolStripMenuItem.Text = "Date Report";
+            this.dateReportToolStripMenuItem.Click += new System.EventHandler(this.dateReportToolStripMenuItem_Click);
+            // 
+            // supplierReportToolStripMenuItem
+            // 
+            this.supplierReportToolStripMenuItem.Name = "supplierReportToolStripMenuItem";
+            this.supplierReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.supplierReportToolStripMenuItem.Text = "Supplier Report";
+            this.supplierReportToolStripMenuItem.Click += new System.EventHandler(this.supplierReportToolStripMenuItem_Click);
+            // 
+            // movieToolStripMenuItem
+            // 
+            this.movieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orderMovieToolStripMenuItem,
+            this.reportBrokenToolStripMenuItem});
+            this.movieToolStripMenuItem.Name = "movieToolStripMenuItem";
+            this.movieToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.movieToolStripMenuItem.Text = "Movie Service";
+            // 
+            // orderMovieToolStripMenuItem
+            // 
+            this.orderMovieToolStripMenuItem.Name = "orderMovieToolStripMenuItem";
+            this.orderMovieToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.orderMovieToolStripMenuItem.Text = "Order Movie";
+            this.orderMovieToolStripMenuItem.Click += new System.EventHandler(this.orderMovieToolStripMenuItem_Click);
+            // 
+            // reportBrokenToolStripMenuItem
+            // 
+            this.reportBrokenToolStripMenuItem.Name = "reportBrokenToolStripMenuItem";
+            this.reportBrokenToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.reportBrokenToolStripMenuItem.Text = "Report Broken";
+            this.reportBrokenToolStripMenuItem.Click += new System.EventHandler(this.reportBrokenToolStripMenuItem_Click);
             // 
             // Homepage
             // 
@@ -150,6 +205,7 @@
             this.Name = "Homepage";
             this.Text = "Homepage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Homepage_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -171,5 +227,11 @@
         private System.Windows.Forms.ToolStripMenuItem tagCreaterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem premiumReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoryReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dateReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem movieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderMovieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportBrokenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierReportToolStripMenuItem;
     }
 }

@@ -67,6 +67,7 @@ namespace MovieRent.BLL.Repositories
                 Movies a = movies.Where(x => x.MovieID == item.MovieID).FirstOrDefault();
                 if (uaps.Where(x => x.MovieID == item.MovieID).Count() > a.Stock)
                 {
+                    //TOOD::if(group by kullanıcı liste :/)
                     shortstock.Add(item);
 
                 }

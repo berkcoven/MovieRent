@@ -38,16 +38,7 @@ namespace MovieRent.FormUI
             
         }
 
-        public void FormKapa()
-        {
-
-
-            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
-            {
-                if (Application.OpenForms[i] != this)
-                    Application.OpenForms[i].Close();
-            }
-        }
+        
 
         private void nextDaysDeliveryRequestToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -97,6 +88,83 @@ namespace MovieRent.FormUI
             report.MdiParent = this;
             report.Show();
 
+        }
+
+        private void categoryReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormKapa();
+            CategoryReport report = new CategoryReport();
+            report.MdiParent = this;
+            report.Show();
+            
+        }
+
+        private void dateReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKapa();
+            DateReport report = new DateReport();
+            report.MdiParent = this;
+            report.Show();
+
+
+            
+        }
+
+        private void orderMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKapa();
+            OrderMovie order = new OrderMovie();
+            order.MdiParent = this;
+            order.Show();
+
+        }
+
+        private void reportBrokenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKapa();
+            BrokenMovie bm = new BrokenMovie();
+            bm.MdiParent = this;
+            bm.Show();
+
+        }
+
+        private void supplierReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormKapa();
+            SupplierReport sreport = new SupplierReport();
+            sreport.MdiParent = this;
+            sreport.Show();
+            
+        }
+
+        private void homepageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKapa();
+            HomepageMessage hpm = new HomepageMessage();
+            hpm.MdiParent = this;
+            hpm.Show();
+            
+        }
+
+        private void Homepage_Load(object sender, EventArgs e)
+        {
+            FormKapa();
+            HomepageMessage hpm = new HomepageMessage();
+            hpm.MdiParent = this;
+            hpm.Show();
+        }
+
+        public void FormKapa()
+        {
+
+
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                if (Application.OpenForms[i] != this)
+                    Application.OpenForms[i].Close();
+            }
         }
     }
 }

@@ -68,6 +68,24 @@
     <Compile Include="Forms\Barcoder.Designer.cs">
       <DependentUpon>Barcoder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BrokenMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BrokenMovie.Designer.cs">
+      <DependentUpon>BrokenMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CategoryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoryReport.Designer.cs">
+      <DependentUpon>CategoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DateReport.Designer.cs">
+      <DependentUpon>DateReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditorListEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +103,12 @@
     </Compile>
     <Compile Include="Forms\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomepageMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomepageMessage.Designer.cs">
+      <DependentUpon>HomepageMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LogIn.cs">
       <SubType>Form</SubType>
@@ -104,11 +128,23 @@
     <Compile Include="Forms\NextDaysRents.Designer.cs">
       <DependentUpon>NextDaysRents.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderMovie.Designer.cs">
+      <DependentUpon>OrderMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReportPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ReportPage.Designer.cs">
       <DependentUpon>ReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SupplierReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupplierReport.Designer.cs">
+      <DependentUpon>SupplierReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +160,15 @@
     <EmbeddedResource Include="Forms\Barcoder.resx">
       <DependentUpon>Barcoder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrokenMovie.resx">
+      <DependentUpon>BrokenMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategoryReport.resx">
+      <DependentUpon>CategoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DateReport.resx">
+      <DependentUpon>DateReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditorListEdit.resx">
       <DependentUpon>EditorListEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomepageMessage.resx">
+      <DependentUpon>HomepageMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -142,8 +190,14 @@
     <EmbeddedResource Include="Forms\NextDaysRents.resx">
       <DependentUpon>NextDaysRents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderMovie.resx">
+      <DependentUpon>OrderMovie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReportPage.resx">
       <DependentUpon>ReportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupplierReport.resx">
+      <DependentUpon>SupplierReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -37,3 +37,9 @@ C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.
 C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Tagger.resources
 C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.FilmReports.resources
 C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.ReportPage.resources
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.CategoryReport.resources
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.DateReport.resources
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.BrokenMovie.resources
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.OrderMovie.resources
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.SupplierReport.resources
+C:\Users\Berk.Coven\source\repos\MovieRent\MovieRent.FormUI\obj\Debug\MovieRent.FormUI.Forms.HomepageMessage.resources

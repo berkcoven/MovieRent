@@ -55,6 +55,8 @@
             this.txtAwards = new System.Windows.Forms.TextBox();
             this.txtSubtitles = new System.Windows.Forms.TextBox();
             this.cmbAudio = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbSup = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -289,11 +291,34 @@
             this.cmbAudio.Size = new System.Drawing.Size(196, 21);
             this.cmbAudio.TabIndex = 14;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(524, 332);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Supplier : ";
+            this.label13.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // cmbSup
+            // 
+            this.cmbSup.FormattingEnabled = true;
+            this.cmbSup.Items.AddRange(new object[] {
+            "Düblaj",
+            "Orjinal"});
+            this.cmbSup.Location = new System.Drawing.Point(602, 329);
+            this.cmbSup.Name = "cmbSup";
+            this.cmbSup.Size = new System.Drawing.Size(196, 21);
+            this.cmbSup.TabIndex = 14;
+            this.cmbSup.SelectedIndexChanged += new System.EventHandler(this.cmbSup_SelectedIndexChanged);
+            // 
             // AddFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 450);
+            this.Controls.Add(this.cmbSup);
             this.Controls.Add(this.cmbAudio);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtSubtitles);
@@ -304,6 +329,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
@@ -359,5 +385,7 @@
         private System.Windows.Forms.TextBox txtAwards;
         private System.Windows.Forms.TextBox txtSubtitles;
         private System.Windows.Forms.ComboBox cmbAudio;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmbSup;
     }
 }

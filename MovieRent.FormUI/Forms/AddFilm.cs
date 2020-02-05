@@ -18,6 +18,7 @@ namespace MovieRent.FormUI
     {
         CategoryRepository cr = new CategoryRepository();
         MoviesRepository mr = new MoviesRepository();
+        SupplierRepository sr = new SupplierRepository();
 
         public AddFilm()
         {
@@ -102,6 +103,7 @@ namespace MovieRent.FormUI
                     movie.Awards = txtAwards.Text;
                     movie.AudioProperty = cmbAudio.SelectedItem.ToString();
                     movie.Altyazi = txtSubtitles.Text;
+                    movie.SupplierID = sr.SelectAll().Where(x => x.SupplierName == cmbSup.SelectedItem.ToString()).FirstOrDefault().SupplierID;
 
                     mr.Add(movie);
 
@@ -132,7 +134,18 @@ namespace MovieRent.FormUI
             {
                 comboBox1.Items.Add(item.CategoryName);
             }
-            
+
+            var supp = sr.SelectAll();
+            foreach (var item in supp)
+            {
+                cmbSup.Items.Add(item.SupplierName);
+            }
+
+        }
+
+        private void cmbSup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

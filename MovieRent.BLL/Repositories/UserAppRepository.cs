@@ -29,7 +29,7 @@ namespace MovieRent.BLL.Repositories
             PremiumRepository pr = new PremiumRepository();
             UserAppListRepository ualp = new UserAppListRepository();
             var prem = pr.SelectAll().Where(x => x.PremiumID == user.Userpremium.PremiumID).FirstOrDefault();
-            int userfilm = ualp.SelectAll().Where(x => x.UserID == user.UserID&&x.isSent==true).Count();
+            int userfilm = ualp.SelectAll().Where(x => x.UserID == user.UserID&&x.isSent==true&&x.isActive==true).Count();
             if (userfilm < prem.RentTimes)
             {
                 
