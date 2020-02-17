@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRent.MVC", "WebApplica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRent.FormUI", "MovieRent.FormUI\MovieRent.FormUI.csproj", "{ED6B13D0-6DD5-4B57-BB2F-178BEBEEAF1E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleData", "SampleData", "{0A26980E-AE85-401B-9409-B959E75672DD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\MovieDB.bak = ..\..\..\Desktop\MovieDB.bak
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
