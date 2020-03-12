@@ -13,8 +13,8 @@ namespace MovieRent.DAL
     {
         public ProjectContext()
         {
-            //this.Configuration.LazyLoadingEnabled = true;
-            Database.Connection.ConnectionString = "server=MBTERYA017\\SQLSERVER;database=MovieDB;uid=sa;password=BkBk123!";
+      
+            Database.Connection.ConnectionString = "server=.;database=MovieDB;uid=sa;password=pass";
 
         }
 

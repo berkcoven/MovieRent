@@ -67,7 +67,7 @@ namespace WebApplication1.Controllers
             return PartialView();
         }
 
-
+        
         public ActionResult SearchWithName(string id)   
         {
             var result =moviesRepository.SelectAll().Where(x => x.MovieName.ToUpper().Contains(id.ToUpper())||x.Director.ToUpper().Contains(id.ToUpper())||x.Actors.ToUpper().Contains(id.ToUpper())).ToList();
@@ -84,9 +84,19 @@ namespace WebApplication1.Controllers
            
             UserApp user = (UserApp)Session["login"];
             List<UserAppFilmList> uap = listRepository.SelectAll().Where(x => x.UserID == user.UserID&&x.isActive==true).ToList();
-            moviesRepository.KiralaTarihi(uap, dt);
-            var userorderlist = listRepository.SelectAll().Where(x => x.UserID == user.UserID && x.isActive == true&&x.KiralaTarihi!=null).OrderBy(x=>x.Oncelik).ToList();
-            return View(userorderlist);
+            if (uap.Count < 10)
+            {
+                TempData["10danaz"] = "Listenizden 10 taneden az film varken sipariş verilemez";
+                return RedirectToAction("Index", "Home");
+
+            }
+            else
+            {
+                moviesRepository.KiralaTarihi(uap, dt);
+                var userorderlist = listRepository.SelectAll().Where(x => x.UserID == user.UserID && x.isActive == true && x.KiralaTarihi != null).OrderBy(x => x.Oncelik).ToList();
+                return View(userorderlist);
+            }
+            
         }
         public ActionResult EnCokKiralanan()
         {

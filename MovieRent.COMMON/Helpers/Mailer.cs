@@ -12,8 +12,8 @@ namespace MovieRent.COMMON.Helpers
     {
         public static void Send(string receiver, string body, string subject  )
         {
-            string sender = "movierent123@gmail.com";
-            string password = @"movie123+%&";
+            string sender = "mailname@mail.com";
+            string password = "**";
             MailAddress senderEmail = new MailAddress(sender);
             MailAddress receiverEmail = new MailAddress(receiver);
             

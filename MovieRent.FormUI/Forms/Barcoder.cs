@@ -36,7 +36,7 @@ namespace MovieRent.FormUI
             string barkod = movie.MovieID + "0" + movie.CategoryID+"0"+movie.Stock;
             string value = Int32.Parse(barkod).ToString("D8");
             movie.Barkodno = Int32.Parse(value);
-            
+            movie.IsActive = true;
             mr.Update(movie.MovieID, movie);
             lblBarcode.Text = movie.Barkodno.ToString();
             lblBarkodAcik.Text = movie.MovieName + " isimli filmi " + movie.CategoryID + ". raf, " + movie.MovieID + ". sıraya koyunuz.";

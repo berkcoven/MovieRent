@@ -15,6 +15,11 @@
                     <p3 style="font-weight:bold; color:orangered">@TempData["HataliFilmSecimi"]</p3>
                     
                     }
+                    @if (TempData["10danaz"] != null)
+                    {
+                    <p3 style="font-weight:bold; color:orangered">@TempData["10danaz"]</p3>
+                    
+                    }
                 </div>
                 @foreach (var item in Model)
                 {

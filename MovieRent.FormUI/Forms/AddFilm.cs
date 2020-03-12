@@ -100,9 +100,27 @@ namespace MovieRent.FormUI
                     movie.CategoryID = selectedCat.CategoryID;
                     movie.Director = txtDirector.Text;
                     movie.Actors = txtActor.Text;
-                    movie.Awards = txtAwards.Text;
+                    if (txtAwards.Text == "")
+                    {
+                        movie.Awards = null;
+
+                    }else
+                    {
+                        movie.Awards = txtAwards.Text;
+
+                    }
                     movie.AudioProperty = cmbAudio.SelectedItem.ToString();
-                    movie.Altyazi = txtSubtitles.Text;
+                     
+                    if (txtSubtitles.Text == "")
+                    {
+                        movie.Altyazi = null;
+
+                    }
+                    else
+                    {
+                        movie.Altyazi = txtSubtitles.Text;
+
+                    }
                     movie.SupplierID = sr.SelectAll().Where(x => x.SupplierName == cmbSup.SelectedItem.ToString()).FirstOrDefault().SupplierID;
 
                     mr.Add(movie);

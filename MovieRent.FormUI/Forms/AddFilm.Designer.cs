@@ -304,9 +304,6 @@
             // cmbSup
             // 
             this.cmbSup.FormattingEnabled = true;
-            this.cmbSup.Items.AddRange(new object[] {
-            "Düblaj",
-            "Orjinal"});
             this.cmbSup.Location = new System.Drawing.Point(602, 329);
             this.cmbSup.Name = "cmbSup";
             this.cmbSup.Size = new System.Drawing.Size(196, 21);
